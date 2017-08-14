@@ -1,0 +1,61 @@
+<body>
+    <div class="container" style="min-width:100%">
+        <div class="row">
+            <!-- BURGERS OF THE DAY -->
+            <div class="col-md-4">
+                <h2> Burgers of the Day </h2>
+                <hr>
+                <ul>
+                    {{#each burgers}} {{#unless this.devoured}}
+                    <li>
+                        {{this.burger_name}}
+                        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="devoured" value="true">
+                            <button type="submit">Eat the burger!</button>
+                        </form>
+                    </li>
+                    {{/unless}} {{/each}}
+                </ul>
+            </div>
+            <!-- WELCOME TO BOBS -->
+            <div class="col-md-4">
+                <h1> Welcome to Bob's </h1>
+                <a href="#" class="thumbnail" style="margin-top: 20px">
+                     <img src="http://i0.kym-cdn.com/entries/icons/original/000/014/700/how-to-draw-bob-bobs-burgers_1_000000007041_5.jpg" alt="..."></a>
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="newAdd">
+                        <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse1">Add a new burger to the menu:</a></h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body" style="text-align: center">
+                            <form class="create-update-form" action="burgers/create" method="POST">
+                                <div class="form-group">
+                                    <input type="text" id="burger" name="burger_name" style="padding: 10px 50px 10px 20px">
+                                    <br>
+                                    <button type="submit" id="addBurger">Add Burger</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- BURGER HALL OF FAME -->
+            <div class="col-md-4">
+                <h2 style="font-weight: bold; font-size: 30px; color: navy; text-align: center; padding-top: 80px; font-family: 'Permanent Marker', cursive; letter-spacing: 3px"> Burger Hall of Fame </h2>
+                <hr>
+                <ul>
+                    {{#each burgers}} {{#if this.devoured}}
+                    <li>
+                        {{this.burger_name}}
+                        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="devoured" value="true">
+                            <button type="submit">Add to menu</button>
+                        </form>
+                    </li>
+                    {{/if}} {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
