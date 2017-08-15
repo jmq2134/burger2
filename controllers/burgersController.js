@@ -22,17 +22,14 @@ router.post('/burgers/create', function(req, res) {
     });
 });
 
-router.put('/burgers/update/:id', function(req, res) {
+router.post('/burgers/update/:id', function(req, res) {
 
     models.burger.update({
         devoured: req.body.devoured
-    }, {
-        fields: devoured,
-        id: req.params.id
-    }).then(function(data) {
+    }, { where: { id: req.params.id } }).then(function(data) {
         res.redirect('/burgers');
-    }).catch(function(err) {
-        console.log(err);
+    }).error(function(err) {
+        console.log("Update failed");
     });
 });
 

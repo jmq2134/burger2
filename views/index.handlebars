@@ -9,10 +9,10 @@
                     {{#each burgers}} {{#unless this.devoured}}
                     <li>
                         {{this.burger_name}}
-                        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
-                            <input type="hidden" name="devoured" value="true">
-                            <button type="submit">Eat the burger!</button>
-                        </form>
+              <form action="burgers/update/{{this.id}}?_method=POST" method="POST">
+              <input type="hidden" name="devoured" value="true">
+              <button type="submit">Eat the burger!</button>
+            </form>
                     </li>
                     {{/unless}} {{/each}}
                 </ul>
@@ -33,6 +33,9 @@
                                 <div class="form-group">
                                     <input type="text" id="burger" name="burger_name" style="padding: 10px 50px 10px 20px">
                                     <br>
+                                    <input type="radio" name="devoured" value="false" checked> Burger of the Day
+                                    <br>
+                                    <input type="radio" name="devoured" value="true"> Burger Hall of Fame
                                     <button type="submit" id="addBurger">Add Burger</button>
                                 </div>
                             </form>
@@ -48,8 +51,8 @@
                     {{#each burgers}} {{#if this.devoured}}
                     <li>
                         {{this.burger_name}}
-                        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
-                            <input type="hidden" name="devoured" value="true">
+                        <form action="burgers/update/{{this.id}}?_method=POST" method="POST">
+                            <input type="hidden" name="devoured" value="false">
                             <button type="submit">Add to menu</button>
                         </form>
                     </li>
