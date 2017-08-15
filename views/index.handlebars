@@ -33,9 +33,9 @@
                                 <div class="form-group">
                                     <input type="text" id="burger" name="burger_name" style="padding: 10px 50px 10px 20px">
                                     <br>
-                                    <input type="radio" name="devoured" value="false" checked> Burger of the Day
+                                    <input type="radio" id="radio" name="devoured" value="false" checked> Burger of the Day
+                                    <input type="radio" id="radio" name="devoured" value="true"> Burger Hall of Fame
                                     <br>
-                                    <input type="radio" name="devoured" value="true"> Burger Hall of Fame
                                     <button type="submit" id="addBurger">Add Burger</button>
                                 </div>
                             </form>
@@ -45,7 +45,7 @@
             </div>
             <!-- BURGER HALL OF FAME -->
             <div class="col-md-4">
-                <h2 style="font-weight: bold; font-size: 30px; color: navy; text-align: center; padding-top: 80px; font-family: 'Permanent Marker', cursive; letter-spacing: 3px"> Burger Hall of Fame </h2>
+                <h2> Burger Hall of Fame </h2>
                 <hr>
                 <ul>
                     {{#each burgers}} {{#if this.devoured}}
