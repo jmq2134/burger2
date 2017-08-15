@@ -9,14 +9,14 @@
   "test": {
     "username": "bbeca4194ab773",
     "password": "e5db52b9",
-    "database": "database_test",
+    "database": "heroku_4dcab6f94d485b0",
     "host": "us-cdbr-iron-east-05.cleardb.net",
     "dialect": "mysql"
   },
   "production": {
     "username": "bbeca4194ab773",
     "password": "e5db52b9",
-    "database": "database_production",
+    "database": "heroku_4dcab6f94d485b0",
     "host": "us-cdbr-iron-east-05.cleardb.net",
     "dialect": "mysql"
   }
