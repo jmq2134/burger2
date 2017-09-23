@@ -6,7 +6,6 @@ Burger2
 
 This is a node based app using Sequelize to add burgers to a menu and move them between the "Menu of the Day" and the "Burger Hall of Fame."  Burger data is stored in SQL.  App hosted at https://stark-springs-50525.herokuapp.com/burgers
 
-![screenshot](screenshot.PNG)
 
 
 ## NPM Installs
